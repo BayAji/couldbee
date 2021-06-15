@@ -13,9 +13,6 @@ class ProductController extends Controller
     	// mengambil data dari table product
     	$product = DB::table('product')->paginate(20);
 		return response()->json(['product' => $product]);
-
-    	// mengirim data product ke view index
-    	return view('index',['product' => $product]);
  
     }
 
@@ -67,7 +64,8 @@ public function update(Request $request)
 public function delete($id)
 {
 	// menghapus data product berdasarkan id yang dipilih
-	$product = DB::table('product')->where('id',$id)->delete();
+	// $product = DB::table('product')->where('id',$id)->delete();
+	$product = DB::table('product')->find($id);
 		
 	// alihkan halaman ke halaman product
 	return response()->json(['product' => $product]);
