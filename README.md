@@ -21,7 +21,7 @@
 - Success Buy [Alya, Irfan, Alfian]
 - My Balance [Alfian]
 - Mutasi (Masuk My Balance) [Alfian, Irfan, Bayu]
-- My Order [Alya, Transaction]
+- My Order [Alya, Irfan]
 - Setting Profile [Bayu]
 - Order Detail [Alya, Irfan, Bayu]
 - My Products [Alya]
