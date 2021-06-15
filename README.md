@@ -5,23 +5,32 @@
 - Alya Sabrina
 - Muhammad Irfan 
 
+## Pembagian Tugas : 
+- Balance: Alfian
+- Mutation: Alfian
+- Frontend/UIUX: Reza
+- User: Bayu
+- Product: Alya
+- Transaction: Irfan 
+
 ## Daftar Tampilan : 
-- Home
-- Product
-- Search Result
-
+- Home [Alya]
+- Product [Alya, Bayu, Irfan]
+- Search Result [Alya]
 - Buy Confirmation (Form)
-- Success Buy
-
-- My Balance
-- My Order
-- Setting Profile
-- Order Detail
-
-- My Products
-- Sales
-
-- Add Product
-- Edit Product
+- Success Buy [Alya, Irfan, Alfian]
+- My Balance [Alfian]
+- Mutasi (Masuk My Balance) [Alfian, Irfan, Bayu]
+- My Order [Alya, Irfan]
+- Setting Profile [Bayu]
+- Order Detail [Alya, Irfan, Bayu]
+- My Products [Alya]
+- Sales [Irfan, Irfan]
+- Add Product [Alya]
+- Edit Product [Alya]
+- Login [Bayu]
+- Navbar [Alfian, Bayu]
 
 > Note: After click buy, balance will decrease automaticly
+
+> Selesai atau tidak tampilan tergantung backend yang berperan
