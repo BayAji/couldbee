@@ -32,4 +32,5 @@
 - Navbar [Alfian, Bayu]
 
 > Note: After click buy, balance will decrease automaticly
+
 > Selesai atau tidak tampilan tergantung backend yang berperan
