@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/user/tambah', [UserController::class, 'tambah']);
 Route::get('/user/detail/{id}', [UserController::class, 'detail']);
 Route::put('/user/update', [UserController::class, 'update']);
+// API Product
+Route::get('/product', [ProductController::class, 'index']);
+Route::post('/product/store', [ProductController::class, 'store']);
+Route::post('/product/update', [ProductController::class, 'update']);
+Route::delete('/product/delete/{id}', [ProductController::class, 'delete']);
