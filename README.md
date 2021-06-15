@@ -5,7 +5,7 @@
 - Alya Sabrina
 - Muhammad Irfan 
 
-## Daftar Anggota Kelompok : 
+## Pembagian Tugas : 
 - Balance: Alfian
 - Mutation: Alfian
 - Frontend/UIUX: Reza
@@ -32,3 +32,4 @@
 - Navbar [Alfian, Bayu]
 
 > Note: After click buy, balance will decrease automaticly
+> Selesai atau tidak tampilan tergantung backend yang berperan
