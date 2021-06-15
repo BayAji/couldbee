@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//route CRUD
+Route::post('/user/tambah', [UserController::class, 'tambah']);
+Route::get('/user/detail/{id}', [UserController::class, 'detail']);
+Route::put('/user/update', [UserController::class, 'update']);
