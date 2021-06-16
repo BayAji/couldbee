@@ -42,6 +42,17 @@ class ProductController extends Controller
 		return response()->json(['product' => $product]);
 	}
 
+
+	public function detail($id)
+	{
+		// mengambil data product berdasarkan id yang dipilih
+		$product = DB::table('product')->where('id', $id)->first();
+		// passing data product yang didapat ke view edit.blade.php
+		return response()->json(['product' => $product]);
+	}
+
+
+
 	// update data product
 	public function update(Request $request)
 	{
