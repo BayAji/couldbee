@@ -8,10 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-	public function index()
+	public function index(Request $request)
 	{
 		// mengambil data dari table product
-		$product = DB::table('product')->paginate(20);
+		$product = DB::table('product');
+		if(isset($request->userid)){
+			$product = $product->where('user_id', $request->userid);
+			}
+		$product = isset($request->search) && isset($request->search_column) ? $product->where($request->search_column, 'like', "%{$request->search}%") : $product;
+		$product = isset($request->order_by) && isset($request->order) ? $product->orderBy($request->order_by, $request->order) : $product;
+		$product = $product->paginate(20);
 		return response()->json(['product' => $product]);
 	}
 
@@ -38,7 +44,7 @@ class ProductController extends Controller
 	{
 		// mengambil data product berdasarkan id yang dipilih
 		$product = DB::table('product')->where('id', $id)->get();
-		// passing data product yang didapat ke view edit.blade.php
+		// alihkan halaman ke halaman product
 		return response()->json(['product' => $product]);
 	}
 
@@ -47,7 +53,7 @@ class ProductController extends Controller
 	{
 		// mengambil data product berdasarkan id yang dipilih
 		$product = DB::table('product')->where('id', $id)->first();
-		// passing data product yang didapat ke view edit.blade.php
+		// alihkan halaman ke halaman product 
 		return response()->json(['product' => $product]);
 	}
 
