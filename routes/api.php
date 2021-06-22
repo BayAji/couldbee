@@ -6,6 +6,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 
 
+use App\Http\Controllers\BalanceController;
+use App\Http\Controllers\MutationController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -33,3 +35,13 @@ Route::post('/product/store', [ProductController::class, 'store']);
 Route::post('/product/update', [ProductController::class, 'update']);
 Route::delete('/product/delete/{id}', [ProductController::class, 'delete']);
 
+Route::get('/product/detail/{id}', [ProductController::class, 'detail']);
+
+// API BALANCE
+Route::get('/balance/detail/{id}', [BalanceController::class, 'detail']);
+Route::post('/balance/increase', [BalanceController::class, 'increase']);
+Route::post('/balance/decrease', [BalanceController::class, 'decrease']);
+
+// API MUTATION
+Route::get('/mutations/{id}', [MutationController::class, 'index']);
+Route::post('/mutation/store', [MutationController::class, 'store']);
