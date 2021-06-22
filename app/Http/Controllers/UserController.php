@@ -8,6 +8,21 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
 
+
+    public function login(Request $request)
+    {
+        $user = DB::table('user')
+            ->select('id', 'email')
+            ->where('email', $request->email)
+            ->where('password', $request->password)
+            ->first();
+        if ($user) {
+            return response()->json(['user' => $user]);
+        } else {
+            return response()->json(['user' => false]);
+        }
+    }
+
     // method untuk menampilkan view form tambah user
     public function tambah(Request $request)
     {

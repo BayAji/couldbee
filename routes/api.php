@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,12 +21,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//route CRUD
-Route::post('/user/tambah', [UserController::class, 'tambah']);
+// API User
+Route::post('/auth/register', [UserController::class, 'tambah']);
 Route::get('/user/detail/{id}', [UserController::class, 'detail']);
 Route::put('/user/update', [UserController::class, 'update']);
+Route::post('/auth/login', [UserController::class, 'login']);
+
 // API Product
 Route::get('/product', [ProductController::class, 'index']);
 Route::post('/product/store', [ProductController::class, 'store']);
 Route::post('/product/update', [ProductController::class, 'update']);
 Route::delete('/product/delete/{id}', [ProductController::class, 'delete']);
+
