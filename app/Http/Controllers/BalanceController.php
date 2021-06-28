@@ -13,7 +13,7 @@ class BalanceController extends Controller
     public function detail($id)
     {
         // mengambil data user berdasarkan id yang dipilih
-        $balance = DB::table('balance')->where('id', $id)->first();
+        $balance = DB::table('balance')->where('user_id', $id)->first();
         // passing data user yang didapat ke view edit.blade.php
         return response()->json(['balance' => $balance]);
     }
