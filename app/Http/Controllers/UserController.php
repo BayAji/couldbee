@@ -27,7 +27,7 @@ class UserController extends Controller
     public function tambah(Request $request)
     {
         // insert data ke table user
-        $user = DB::table('user')->insert([
+        $user = DB::table('user')->insertGetId([
             'name' => $request->name,
             'address' => $request->address,
             'notelp' => $request->notelp,
@@ -57,9 +57,8 @@ class UserController extends Controller
             'address' => $request->address,
             'notelp' => $request->notelp,
             'birthday' => $request->birthday,
-            'gender' => $request->gender,
-            'email' => $request->email,
-            'password' => $request->password
+            'gender' => $request->gender
+    
         ]);
         // alihkan halaman ke halaman user
         return response()->json(['user' => $user]);
