@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\ValidateRequester;
 
 
 /*
@@ -14,14 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware([ValidateRequester::class])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
-
-
-Route::get('/product', function () {
-    return view('product');
-});
-
-
-
