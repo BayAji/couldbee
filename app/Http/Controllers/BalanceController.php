@@ -22,7 +22,7 @@ class BalanceController extends Controller
     {
          // tambah saldo
         if(DB::table('balance')->where('user_id', $request->user_id)->first()){
-            $balance = DB::table('balance')->increment('balance', $request->total);
+            $balance = DB::table('balance')->where('user_id', $request->user_id)->increment('balance', $request->total);
         }else {
             $balance = DB::table('balance')->updateOrInsert(['user_id' => $request->user_id, 'balance' => $request->total]);
         }
@@ -35,7 +35,7 @@ class BalanceController extends Controller
     {
         // kurangi saldo setelah membeli
         if(DB::table('balance')->where('user_id', $request->user_id)->first()){
-            $balance = DB::table('balance')->decrement('balance', $request->total);
+            $balance = DB::table('balance')->where('user_id', $request->user_id)->decrement('balance', $request->total);
         }else {
             $balance = DB::table('balance')->updateOrInsert(['user_id' => $request->user_id, 'balance' => 0]);
         }
